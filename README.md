@@ -1,6 +1,10 @@
 English version [below](#english-version).
 ###  Запуск [mhddos_proxy_releases](https://github.com/porthole-ascend-cinnamon/mhddos_proxy_releases) на віртуальній машині в хмарному сервісі AWS з нуля
 Ідентичний проєкт для хмарного сервісу GCP знаходиться [тут](https://github.com/mqstr/itarmy-gcp).
+#### Передумови
+- активний [обліковий запис AWS](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
+- встановлений [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+- добре мати встановлений [Git](https://git-scm.com/book/uk/v2/Вступ-Інсталяція-Git) щоб ви могли оновлювати свою локальну копію цього репозиторію, інакше [завантажте](https://github.com/mqstr/itarmy-aws/archive/refs/heads/main.zip) його останню версію
 #### Швидкий старт
     $ git clone https://github.com/mqstr/itarmy-aws.git
     $ cd itarmy-aws
@@ -35,6 +39,10 @@ ubuntu@<Private IP DNS name>:~$ tmux attach-session -t itarmy
 ## English version
 ###  Running [mhddos_proxy_releases](https://github.com/porthole-ascend-cinnamon/mhddos_proxy_releases) on EC2 instance in the AWS cloud from scratch
 An identical project for the GCP cloud is [here](https://github.com/mqstr/itarmy-gcp).
+#### Prerequisites
+- active [AWS account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
+- installed [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+- good to have installed [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) so you can update your local copy of this repository, otherwise [dowload](https://github.com/mqstr/itarmy-aws/archive/refs/heads/main.zip) its latest version
 #### Quick start
     $ git clone https://github.com/mqstr/itarmy-aws.git
     $ cd itarmy-aws

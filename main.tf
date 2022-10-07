@@ -84,3 +84,7 @@ resource "aws_instance" "itarmy" {
     Name = "itarmy"
   }
 }
+
+output "Public_IPv4_address" {
+  value = aws_instance.itarmy.public_ip
+}
